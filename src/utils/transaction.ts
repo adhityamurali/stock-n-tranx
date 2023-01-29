@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import { ITransaction } from "../interfaces/transaction";
-// import {} from '../../jest.config'
 
 const filePath = path.resolve(__dirname,'../../dataStore/transactions.json') ;
 

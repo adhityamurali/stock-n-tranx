@@ -3,6 +3,7 @@ import {calculateCurrentStockLevels} from './inventory';
 
 const testSku = 'LTV719449/39/39';
 const invalidStock = 'asdf';
+const testskuNotInStock = 'HGG795032/35/91'
 describe('calculateCurrentStockLevels', () => {
   let qty: number;
   let data: {sku: string, qty:number};
@@ -35,7 +36,7 @@ describe('calculateCurrentStockLevels', () => {
   });
 
   test('It should return 0 qty when stock is not there', async() => {
-    data = await calculateCurrentStockLevels('HGG795032/35/91');
+    data = await calculateCurrentStockLevels(testskuNotInStock);
     expect(data).toBeInstanceOf(Object);
     expect(data).toHaveProperty("sku");
     expect(data).toHaveProperty("qty");
